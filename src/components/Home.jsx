@@ -26,7 +26,7 @@ const HomeContainer = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => { 
-        fetch("http://localhost:8000/contentlist", {
+        fetch("http://ssal.sparcs.org:51237/contentlist", {
             method: "GET",
             headers: {
                 'Content-type': 'application/json'

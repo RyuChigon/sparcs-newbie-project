@@ -25,7 +25,7 @@ const SignUp = () => {
 
   const pushData = () => {
     if (pw === pwc) {
-      fetch("http://localhost:8000/signup", {
+      fetch("http://ssal.sparcs.org:51237/signup", {
         method: "POST",
         headers: {
           'Content-type': 'application/json'

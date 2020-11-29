@@ -22,7 +22,7 @@ function App() {
   }
 
   const loginEvent = () => {
-    fetch("http://localhost:8000/login", {
+    fetch("http://ssal.sparcs.org:51237/login", {
       method: "POST",
       headers: {
         'Content-type': 'application/json'
