@@ -1,0 +1,11 @@
+.Home {
+    font-family: 'nanumsquare';
+}
+
+#title {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    background: black;
+    padding: 20px;
+}
