@@ -78,7 +78,7 @@ const SignUp = () => {
           <Form.Control  type="password" placeholder="Password" value={pwc} onChange={enterPwc}/>
         </Form.Group>
 
-        <Button className="post_send" variant="primary" type="submit" onClick={pushData}>
+        <Button className="post_send" variant="primary" onClick={pushData}>
           완료
         </Button>
       </Form>
