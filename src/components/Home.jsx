@@ -35,10 +35,6 @@ const HomeContainer = () => {
         .then(res => res.json())
         .then(res => {
             setPosts(res);
-            // for (var i = 0; i < res.length ; i++) {
-            //     list_title.push(res[i].title);
-            //     list_content.push(res[i].content);
-            // }
         })
     }, []); // 빈배열이면 처음 그려질때만 작동이 되는데, 다른 페이지 갔다온것도 처음 그려진것으로 인식한다, 변수가 있다면 그 변수가 변화할때 마다 작동
 
