@@ -35,9 +35,18 @@ const SignUp = () => {
           pw: pw,
         }),
       })
-      .then((response) => response.json())
-  
-      alert("회원가입이 완료되었습니다.");
+      .then(res => res.text())
+      .then(text => {
+        if (text === "used id") {
+          alert("중복되는 아이디가 있습니다.(회원가입 실패)");
+        }
+        else if (text === "no id") {
+          alert("아이디를 입력하세요.");
+        }
+        else {
+          alert("회원가입이 완료되었습니다.")
+        }
+      })
     }
     else {
       alert('비밀번호를 다시 한 번 확인하세요.');
