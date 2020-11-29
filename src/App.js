@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link, useHistory } from 'react-router-dom';
 
-var loginState = 0;
 
 function App() {
   const [id, setId] = useState('');

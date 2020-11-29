@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -10,6 +10,7 @@ const SignUp = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [pwc, setPwc] = useState('');
+  const history = useHistory();
 
   const enterId = (e) => {
     setId(e.target.value);
@@ -45,6 +46,7 @@ const SignUp = () => {
         }
         else {
           alert("회원가입이 완료되었습니다.")
+          history.push('/');
         }
       })
     }
@@ -76,11 +78,9 @@ const SignUp = () => {
           <Form.Control  type="password" placeholder="Password" value={pwc} onChange={enterPwc}/>
         </Form.Group>
 
-        <Link to="/">
-          <Button className="post_send" variant="primary" type="submit" onClick={pushData}>
-            완료
-          </Button>
-        </Link>
+        <Button className="post_send" variant="primary" type="submit" onClick={pushData}>
+          완료
+        </Button>
       </Form>
     </div>
   );
