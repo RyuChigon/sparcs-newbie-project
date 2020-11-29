@@ -4,13 +4,14 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 var loginState = 0;
 
 function App() {
   const [id, setId] = useState('');
   const [pw, setPassword] = useState('');
+  const history = useHistory();
 
   const enterId = (e) => {
     setId(e.target.value);
@@ -20,7 +21,7 @@ function App() {
     setPassword(e.target.value);
   }
 
-  const loginEvent = ( {history} ) => {
+  const loginEvent = () => {
     fetch("http://localhost:8000/login", {
       method: "POST",
       headers: {
@@ -35,9 +36,10 @@ function App() {
     .then(text => {
       if (text === "Yes") {
         alert("로그인 성공");
+        history.push('/home');
       }
       else {
-        alert('로그인 실패"');
+        alert('로그인 실패');
       }
     })
   }
@@ -56,11 +58,10 @@ function App() {
             <Form.Label>비밀번호</Form.Label>
             <Form.Control  type="password" placeholder="Password" value={pw} onChange={enterPw}/>
           </Form.Group>
-          <Link to='/home'>
-            <Button variant="primary" onClick={loginEvent}>
-              로그인
-            </Button>
-          </Link>
+          <Button variant="primary" onClick={loginEvent}>
+            로그인
+          </Button>
+          
 
         </Form>
         <br></br>
