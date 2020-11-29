@@ -18,7 +18,7 @@ const Write = () => {
     }
     
     const pushData = () => {
-        fetch("http://localhost:8000/makecontent", {
+        fetch("http://ssal.sparcs.org:42304/makecontent", {
         method: "POST",
         headers: {
             'Content-type': 'application/json'
