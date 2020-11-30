@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, forceUpdate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -36,34 +36,73 @@ const Write = () => {
     
 
     return (
-        <div className="Home">
-        <div id="title">
-          <h1 >카이스트 도장깨기</h1>
-        </div>
-        
-        <Form>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>글 제목</Form.Label>
-            <Form.Control as="textarea" rows={1} onChange={ enterTitle } />
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>글 내용</Form.Label>
-            <Form.Control as="textarea" rows={20} onChange={ enterContent } />
-        </Form.Group>
-        <Link to='/home'>
-            <Button variant="success" size="lg" block onClick={ pushData }>
-                올리기
-            </Button>
-        </Link>
-        <br></br>
-        <Link to='/home'>
-            <Button variant="success" size="lg" block>
-                뒤로 가기
-            </Button>
-        </Link>
-        </Form>
+        <div className="Write">
+            <div id="btn2">
+                <Link to='/'>
+                     <style type="text/css">
+                        {`
+                            .btn-flat1 {
+                            background-color: #61dafb;
+                            color: black;
+                            }
+    
+                            .btn-xxl1 {
+                            padding: 0.3rem 0.6rem;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            }
+                        `}
+                        </style>
+                    <Button variant="flat1" size="xxl1">로그아웃</Button>
+                </Link>
+            </div>
+            <div id="title2">
+                카이스트 도장깨기
+            </div>
+            <div className="sub">
+                <Form>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>글 제목</Form.Label>
+                    <Form.Control as="textarea" rows={1} onChange={ enterTitle } />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>글 내용</Form.Label>
+                    <Form.Control as="textarea" rows={20} onChange={ enterContent } />
+                </Form.Group>
+                </Form>
+            </div>
 
-      </div>
+            <style type="text/css">
+                {`
+                .btn-flat {
+                    background-color: #61dafb;
+                    color: black;
+                }
+
+                .btn-xxl {
+                    padding: 0.4rem 20rem;
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+                `}
+            </style>
+            
+            <Link to='/home'>
+                <div className="btn">
+                    <Button variant="flat" size="xxl" onClick={ pushData }>
+                        올리기
+                    </Button>
+                </div>
+            </Link>
+            <Link to='/home'>
+                <div className="btn">
+                    <Button variant="flat" size="xxl">
+                        홈으로
+                    </Button>
+                </div>
+            </Link>
+        </div>
+      
     );
 }
 
