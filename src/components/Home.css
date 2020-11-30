@@ -1,11 +1,49 @@
-.Home {
-    font-family: 'nanumsquare';
-}
-
 #title {
     text-align: center;
-    font-size: 30px;
-    color: white;
-    background: black;
-    padding: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #0183a7;
+    margin: 30px;
+    margin-top: 10px;
+}
+
+#btn1 {
+    position: absolute;
+    right: 2%;
+}
+#btn2 {
+    position: absolute;
+    left: 2%;
+}
+
+.com {
+    margin: 20px;
+    margin-left: 10px;
+    font-family: 
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 25px;
+}
+
+#left {
+    grid-column: 1;
+    grid-row: 1;
+}
+#right {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#post_title {
+    margin: 20px;
+    font-size: 40px;
+}
+
+#post_content {
+    margin: 20px;
+    margin-top: 30px;
 }
