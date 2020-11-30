@@ -65,6 +65,13 @@ const Write = () => {
                     <Form.Label>글 제목</Form.Label>
                     <Form.Control as="textarea" rows={1} onChange={ enterTitle } />
                 </Form.Group>
+                <Form.Group controlId="exampleForm.SelectCustom">
+                    <Form.Label>장소</Form.Label>
+                    <Form.Control as="select" custom>
+                    <option>카이스트</option>
+                    <option>어은동</option>
+                    </Form.Control>
+                </Form.Group>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>글 내용</Form.Label>
                     <Form.Control as="textarea" rows={20} onChange={ enterContent } />

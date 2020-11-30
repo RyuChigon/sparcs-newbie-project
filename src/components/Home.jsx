@@ -4,10 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import './Home.css';
 
-//const list_title = [];
-//const list_content = [];
-
-
 
 const Home = (props) => {
 
@@ -15,7 +11,8 @@ const Home = (props) => {
 
     return (
         <div className="com">
-            {props.title}
+            <input type="button" id="btn3" value = {props.title} />
+            <p>{props.content}</p>
             <hr/>
         </div>
     )
@@ -25,6 +22,8 @@ const Home = (props) => {
 
 const HomeContainer = () => {
     const [posts, setPosts] = useState([]);
+    //const [location, setLocation] = useState('');
+
 
     useEffect(() => { 
         fetch("http://ssal.sparcs.org:51237/contentlist", {
@@ -35,7 +34,7 @@ const HomeContainer = () => {
         })
         .then(res => res.json())
         .then(res => {
-            setPosts(res);
+            setPosts(res.reverse());
         })
     }, []); // 빈배열이면 처음 그려질때만 작동이 되는데, 다른 페이지 갔다온것도 처음 그려진것으로 인식한다, 변수가 있다면 그 변수가 변화할때 마다 작동
 
@@ -59,7 +58,7 @@ const HomeContainer = () => {
                         }
                     `}
                     </style>
-                    <Button variant="flat" size="xxl">글 작성</Button>
+                    <Button variant="flat" size="xxl" >글 작성</Button>
                 </Link>
             </div>
             <div id="btn2">
@@ -72,11 +71,19 @@ const HomeContainer = () => {
             </div>
             <div id="container">
                 <div id="left">
-                    {posts.map(post => <Home title={post.title} />)}
+                    {posts.map(post => <Home title={post.title} content={post.content} />)}
                 </div>
                 <div id="right">
-                    <div id="post_title">안뇽</div>
-                    <div id="post_content">우리히히히히ㅣ히ㅣㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</div>
+                    <div id="kaist">
+                        <img src="http://newskaistaff.kaist.ac.kr/wp-content/uploads/2019/07/201907_04_01.jpg" width="300" alt="profile"/>
+                        <br></br>
+                        <input type="button" id="btn4" value = "카이스트"  />
+                    </div>
+                    <div id="uen" >
+                        <img src="https://img.siksinhot.com/place/1453730020565876.jpg?w=440&h=440&c=Y" width="300" height="200" alt="profile" />
+                        <br></br>
+                        <input type="button" id="btn4" value = "어은동" />
+                    </div>
                 </div>
             </div>
         </div>

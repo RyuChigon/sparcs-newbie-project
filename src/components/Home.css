@@ -7,6 +7,13 @@
     margin-top: 10px;
 }
 
+p {
+    background-color: white;
+    color: black;
+    margin-left: 6px;
+    font-size: 15px;
+}
+
 #btn1 {
     position: absolute;
     right: 2%;
@@ -16,14 +23,34 @@
     left: 2%;
 }
 
+#btn3 {
+    background-color: white;
+    border: 0;
+    outline: 0;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+#btn4 {
+    background-color: white;
+    border: 0;
+    outline: 0;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
 .com {
-    margin: 20px;
     margin-left: 10px;
 }
 
 #container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 10px;
     font-size: 25px;
 }
@@ -45,4 +72,25 @@
 #post_content {
     margin: 20px;
     margin-top: 30px;
+}
+
+#kaist {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #0183a7;
+    font-weight: bold;
+    border-style: solid;
+}
+
+#uen {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border-style: solid;
 }
