@@ -14,8 +14,9 @@ const Home = (props) => {
     console.log("Home used");
 
     return (
-        <div>
+        <div className="com">
             {props.title}
+            <hr/>
         </div>
     )
 
@@ -42,14 +43,41 @@ const HomeContainer = () => {
     //console.log(list_title);
     return (
         <div className="Home">
-            <div id="title">
-                <h1 >카이스트 도장깨기</h1>
-            </div>
-            <div>
+            <div id="btn1">
                 <Link to='/write'>
-                    <Button variant="success">글 작성</Button>
+                    <style type="text/css">
+                    {`
+                        .btn-flat {
+                        background-color: #61dafb;
+                        color: black;
+                        }
+
+                        .btn-xxl {
+                        padding: 0.3rem 0.6rem;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        }
+                    `}
+                    </style>
+                    <Button variant="flat" size="xxl">글 작성</Button>
                 </Link>
-                {posts.map(post => <Home title={post.title} />)}
+            </div>
+            <div id="btn2">
+                <Link to='/'>
+                    <Button variant="flat" size="xxl">로그아웃</Button>
+                </Link>
+            </div>
+            <div id="title">
+                카이스트 도장깨기
+            </div>
+            <div id="container">
+                <div id="left">
+                    {posts.map(post => <Home title={post.title} />)}
+                </div>
+                <div id="right">
+                    <div id="post_title">안뇽</div>
+                    <div id="post_content">우리히히히히ㅣ히ㅣㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</div>
+                </div>
             </div>
         </div>
     );
