@@ -77,11 +77,30 @@ const SignUp = () => {
           <Form.Label>비밀번호 확인</Form.Label>
           <Form.Control  type="password" placeholder="Password" value={pwc} onChange={enterPwc}/>
         </Form.Group>
+        <style type="text/css">
+        {`
+          .btn-flat {
+            background-color: #61dafb;
+            margin: 5px;
+            color: black;
+          }
 
-        <Button className="post_send" variant="primary" onClick={pushData}>
+          .btn-xxl {
+            padding: 0.4rem 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+          }
+          `}
+        </style>
+      </Form>
+      <Button className="post_send" variant="flat" size="xxl" onClick={pushData}>
           완료
         </Button>
-      </Form>
+      <Link to='/'>
+        <Button className="post_send" variant="flat" size="xxl">
+          뒤로
+        </Button>
+      </Link>
     </div>
   );
 }
