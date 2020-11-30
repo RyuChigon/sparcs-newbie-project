@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="title">카이스트 도장깨기</div>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>아이디</Form.Label>
@@ -57,15 +57,27 @@ function App() {
             <Form.Label>비밀번호</Form.Label>
             <Form.Control  type="password" placeholder="Password" value={pw} onChange={enterPw}/>
           </Form.Group>
-          <Button variant="primary" onClick={loginEvent}>
-            로그인
-          </Button>
-          
-
         </Form>
-        <br></br>
+        <style type="text/css">
+        {`
+          .btn-flat {
+            background-color: #61dafb;
+            color: black;
+          }
+
+          .btn-xxl {
+            margin: 5px;
+            padding: 0.4rem 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+          }
+          `}
+        </style>
+        <Button variant="flat" size="xxl" onClick={loginEvent}>
+            로그인
+        </Button>
         <Link to="/signup">
-          <Button variant="primary" type="submit">
+          <Button variant="flat" size="xxl" type="submit">
             회원가입
           </Button>
         </Link>
